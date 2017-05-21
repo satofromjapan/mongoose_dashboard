@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit a cat</title>
+  </head>
+  <body>
+    <% for (var x in cats) {%>
+    <h1>Edit <%= cats[x].name%></h1>
+    <form class="" action="/cats/<%=cats[x].id%>" method="post">
+      <label for="name">Name: <input type="text" name="name" value="<%=cats[x].name%>"></label>
+      <label for="age">Age: <input type="number" name="age" min="1" max="30" value="<%=cats[x].age%>"></label>
+      <label for="color">Color: <input type="text" name="color" value="<%=cats[x].color%>"></label>
+      <input type="submit" name="" value="Edit">
+      <a href="/"><button type="button" name="button">Cancel</button></a>
+    </form>
+    <% }%>
+  </body>
+</html>
